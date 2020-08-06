@@ -1,1 +1,98 @@
-/* You can add global styles to this file, and also import other style files */
+/* Who needs alcohol when u can just read my code to get drunk */
+.img-logo-size {
+    width: 3rem;
+}
+
+.navbar{
+    opacity: 0.8;
+    border-bottom: 3px #0083d6 solid;
+}
+
+.navbar .nav-link{
+    text-transform: uppercase;
+}
+
+.navbar-brand {
+    font-family: 'Oleo Script', cursive;
+    font-size: 1.4rem !important;
+}
+
+body {
+    margin-top: 69px !important;
+}
+
+.bg-lottery-img {
+    position: relative;
+    background: url('../src/assets/images/jumbotron-cash-bg.jpg');
+    background-size: cover;
+    min-height: 300px;
+}
+
+.bg-lottery-img .bg-overlay {
+    position: absolute;
+    background: rgba(0, 0, 0, 0.6);
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.info-header {
+    width: 50%;
+    margin: auto;
+    border-bottom: 2px #343a40 solid; 
+}
+
+.main-card {
+    height: 150px;
+    border: 2px #343a40 solid !important;
+}
+
+/* Contact page */
+
+.founder-card img {
+    margin-top: -80px;
+}
+
+.founder-card {
+    box-shadow: 2px 3px 5px #ccc;
+    border: #ccc solid 2px !important;
+}
+
+.founder-card:hover {
+    background: #343a40;
+    color: #fff;
+    border: none;
+    box-shadow: none;
+}
+
+.founder-card:hover .fa-color {
+    color: #fff;
+}
+
+/* .phone-link:hover .phone-hover {
+    display: block;
+    cursor: pointer;
+    background: lightgray;
+    color: #000;
+    z-index: 5;
+    border-radius: 1rem;
+}
+
+.email-link:hover .email-hover{
+    cursor: pointer;
+    display: block;
+    background: lightgray;
+    color: #000;
+    z-index: 5;
+    border-radius: 1rem;
+} */
+
+@media(max-width: 576px) {
+    #banner-main {
+        margin-top: 50px;
+    }
+    #banner-main h3{
+        font-size: 2rem;
+    }
+}
