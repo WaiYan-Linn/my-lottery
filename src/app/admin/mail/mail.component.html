@@ -1,0 +1,55 @@
+<div class="container" *ngIf="option=='mail'">
+    <div class="row" >
+        <div class="col-sm-4" *ngFor="let item of order" >
+           
+            <div class="card border-secondary mb-2" >
+
+                <i class="fas fa-shopping-cart"></i>
+
+                <div class="card-body">
+
+                    <p class="card-text">{{item.name}}</p>
+                    <p class="card-text">{{item.phone}}</p>
+                    <p class="card-text">{{item.address}}</p>
+                    <p class="card-text">{{item.time}}</p>
+                    <p class="card-text">{{item.description1}}</p>
+                    <p class="card-text">{{item.description2}}</p>
+                    <p class="card-text">{{item.description3}}</p>
+                    <p class="card-text">{{item.description4}}</p>
+                    <p class="card-text">{{item.description5}}</p>
+
+                </div>
+
+           
+        </div>
+        </div>    
+        
+        </div>
+
+        
+
+        <div class="row">
+            <div class="col-sm-4" *ngFor="let item of mail" >
+           
+                <div class="card border-secondary mb-2" >
+    
+                    <i class="fa fa-envelope"></i>
+    
+                    <div class="card-body">
+    
+                        <p class="card-text">{{item.name}}</p>
+                        <p class="card-text">{{item.phone}}</p>
+                        <p class="card-text">{{item.address}}</p>
+                        <p class="card-text">{{item.time}}</p>
+                        <p class="card-text">{{item.message}}</p>
+                        
+                    </div>
+    
+               
+            </div>
+            </div>
+    
+        </div>
+
+    </div>
+

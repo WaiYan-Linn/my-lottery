@@ -1,0 +1,23 @@
+
+.contact-jumbo-bg {
+	position: relative;
+	background: url('../../../src/assets/images/contact-jumbo-bg.jpg');
+	background-size: cover;
+	min-height: 250px;
+}
+
+.contact-jumbo-bg .bg-contact-overlay {
+	position: absolute;
+    background: rgba(0, 0, 0, 0.6);
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.lead {
+	font-size: 1.8rem;
+}
+
+
+

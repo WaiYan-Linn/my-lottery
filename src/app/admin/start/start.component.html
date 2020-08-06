@@ -1,0 +1,52 @@
+
+<!-- JUMBOTRON SHOWCASE -->
+<section id="banner-main">
+  <div class="jumbotron jumbotron-fluid text-white bg-lottery-img">
+    <div class="bg-overlay">
+      <div class="container pt-4">
+        <div class="m-auto">
+          <h3 class="display-3">Online Lottery Vendor</h3>
+          <p class="lead">Click here to choose options</p>
+          <button class="btn btn-secondary" data-toggle="modal" data-target="#exampleModal1">Options</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Options</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form [formGroup]="optionForm" autocomplete="off" novalidate>
+          <div class="form-group">
+            <label class="col-form-label">Password</label>
+            <input type="password" class="form-control" formControlName="options" #password>
+
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-secondary" *ngIf="password.value==='crud'" [routerLink]="['crud']" data-dismiss="modal" (click)="option(password.value)">Done</button>
+        <button type="button" class="btn btn-secondary" *ngIf="password.value==='mail'" [routerLink]="['mail']" data-dismiss="modal" (click)="option(password.value)">Done</button>
+
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<app-crud [option]="crudOption"></app-crud>
+
+<app-mail [option]="crudOption"></app-mail>
+
+<router-outlet></router-outlet>

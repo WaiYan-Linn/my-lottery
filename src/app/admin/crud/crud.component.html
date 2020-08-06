@@ -1,0 +1,95 @@
+<div class="container" *ngIf="option=='crud'" >
+    <div class="row justify-content-center p-2">
+        <h1>Lottery Tickets</h1>
+    </div>
+    
+    <div class="form-group">
+        <input type="text" class="form-control" [(ngModel)]="description1" placeholder="Enter Description1">
+    </div>
+    <div class="form-group">
+        <input type="text" class="form-control" [(ngModel)]="description2" placeholder="Enter Description2">
+    </div>
+    <div class="form-group">
+        <input type="text" class="form-control" [(ngModel)]="description3" placeholder="Enter Description3">
+    </div>
+    <div class="form-group">
+        <input type="text" class="form-control" [(ngModel)]="description4" placeholder="Enter Description4">
+    </div>
+    <div class="form-group">
+        <input type="text" class="form-control" [(ngModel)]="description5" placeholder="Enter Description5">
+    </div>
+    
+    <div class="form-group">
+        <button class="btn btn-outline-secondary" (click)="create_cards()" [disabled]="!description1 || !description2 || !description3">Create Cards</button>
+    </div>
+
+
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-4" *ngFor ="let item of sheet">
+                <div class="card border-secondary mb-2" *ngIf="!item.isedit; else elseBlock">
+    
+                    <div class="card-body">
+                        <img class="card-img-top"  style="height: auto" src ="https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80" alt="Card image cap">
+    
+                        <p class="card-text">{{item.description1}}</p>
+                        <p class="card-text">{{item.description2}}</p>
+                        <p class="card-text">{{item.description3}}</p>
+                        <p class="card-text">{{item.description4}}</p>
+                        <p class="card-text">{{item.description5}}</p>
+    
+    
+                        <span>
+                            <button (click)="edit_cards(item)" class="btn btn-outline-secondary mr-2 btn-xs">Edit Cards</button>
+                            <button  (click)= "delete_cards(item.id)" class="btn btn-outline-secondary btn-xs">Delete Cards</button>
+                        </span>
+                    </div>
+                    
+                </div>
+            
+       
+        
+
+            <ng-template #elseBlock>
+                <div class="card">
+                    <div class="card-body">
+                        <div class="card-title">
+                            Edit Cards
+                        </div>
+                        <div class="row">
+                            <div class="form-group">
+                                
+                                <div class="col-md-12">
+                                    <input type="text" [(ngModel)]="item.editdescription1" class="form-control">
+                                </div>
+                                <div class="col-md-12">
+                                    <input type="text" [(ngModel)]="item.editdescription2" class="form-control">
+                                </div>
+                                <div class="col-md-12">
+                                    <input type="text" [(ngModel)]="item.editdescription3" class="form-control">
+                                </div>
+                                <div class="col-md-12">
+                                    <input type="text" [(ngModel)]="item.editdescription4" class="form-control">
+                                </div>
+                                <div class="col-md-12">
+                                    <input type="text" [(ngModel)]="item.editdescription5" class="form-control">
+                                </div>
+                                <div class="col-md-12">
+                                    <input type="text" [(ngModel)]="item.editorder" class="form-control">
+                                </div>
+
+                            </div>
+                        </div>
+                    
+                        <button class="btn btn-outline-secondary mr-2 btn-xs" (click)="item.isedit = false">Cancel</button>
+                        <button class="btn btn-outline-secondary btn-xs" (click)="update_cards(item)">Update Cards</button>
+                   
+                    </div>
+                </div>
+            </ng-template>
+        </div>
+        </div>
+
+        </div>
+       
+    </div>

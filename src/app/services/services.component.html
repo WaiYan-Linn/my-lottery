@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop</title>
+</head>
+<body>
+  
+  <div id="services-banner" class="py-5 text-center text-white">
+    <div class="jumbotron jumbotron-fluid services-jumbo-bg">
+			<div class="container">
+				<div class="bg-services-overlay">
+					<div class="pt-5">
+						<h3 class="display-4">Our Services</h3>
+						<h5 class="lead">Choose one of our following service plans</h5>
+					</div>
+				</div>
+			</div>
+		</div>
+  </div>
+
+  <!-- Services Area -->
+  <div id="main-services" class="bg-light mb-5">
+    <div class="container text-center">
+      <div class="row">
+        <div class="col-md-6 mb-5">
+          <div class="card border-dark">
+            <div class="card-header">
+              <h4 class="card-title">Service Plan One</h4>
+            </div>
+            <div class="card-body">
+              <img src="https://scontent.frgn5-2.fna.fbcdn.net/v/t1.15752-9/117170906_222582085672629_5826229363433116206_n.jpg?_nc_cat=109&_nc_sid=b96e70&_nc_ohc=pMoPb2AkrP8AX8vGoGK&_nc_ht=scontent.frgn5-2.fna&oh=a3bd059cf0547608bda04b55a527dd7e&oe=5F530E8D"
+               alt="5 ticket img" class="img-fluid">
+            </div>
+            <div class="card-footer">
+              <a [routerLink]="['/shop/five-sheet']" class="btn btn-outline-secondary btn-lg">Show All</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 mb-5">
+          <div class="card border-dark">
+            <div class="card-header">
+              <h4 class="card-title">Service Plan Two</h4>
+            </div>
+            <div class="card-body">
+              <img src="https://scontent.frgn5-2.fna.fbcdn.net/v/t1.15752-9/117301751_336232250742889_8537579554816068198_n.jpg?_nc_cat=100&_nc_sid=b96e70&_nc_ohc=c5_DfCW26fEAX8djFgA&_nc_ht=scontent.frgn5-2.fna&oh=08a460b6b2ce8d930ae33bc516a4049b&oe=5F4FC200"
+               alt="3 ticket img" class="img-fluid">
+            </div>
+            <div class="card-footer">
+              <a [routerLink]="['/shop/three-sheet']" class="btn btn-outline-secondary btn-lg">Show All</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <router-outlet></router-outlet>
+
+      <footer id="main-footer" class="bg-dark text-center text-white">
+        <div class="container">
+          <div class="row">
+          <div class="col py-4">
+            <h3>Linn</h3>
+            <p>Copyright &copy;2020<span id="year"></span></p>
+          </div>
+          </div>
+        </div>
+        </footer>
+</body>
+</html>
+

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Contact Me!</title>
+	<link rel="stylesheet" type="text/css" href="contact.component.css">
+</head>
+<body>
+	
+	  <!-- Main Jumbotron -->
+	<section id="banner-contact" class="text-center text-white">
+		<div class="jumbotron jumbotron-fluid contact-jumbo-bg">
+			<div class="container">
+				<div class="bg-contact-overlay">
+					<div class="pt-5">
+						<h3 class="display-4">Get In Touch</h3>
+						<h5 class="lead">Contact me for more information!</h5>
+					</div>
+				</div>
+			</div>
+		</div>
+	  </section>
+
+	  <section id="main-contact" class="py-5 text-center">
+		  <div class="container">
+			  <div class="row">
+				  <div class="col-md-4 mb-3">
+					<div class="card founder-card">
+						<div class="card-body">
+							<img src="https://scontent.frgn4-1.fna.fbcdn.net/v/t1.15752-9/116151480_726936781424340_9103485516870203073_n.png?_nc_cat=106&_nc_sid=b96e70&_nc_ohc=x42MnyF9B5wAX_XYljP&_nc_ht=scontent.frgn4-1.fna&oh=498450b235a1da54ac6284832b3c257b&oe=5F4BC44B" 
+							 class="img-fluid rounded-circle w-50 mb-2" />
+							<h3 class="text-muted">Linn</h3>
+							<h5 class="text-muted">Welcome</h5>
+							<p class="text-muted">We are ready to serve you</p>
+							<div class="d-flex justify-content-center">
+								<div class="p-3">
+									<a href="#contactModal" data-toggle="modal" class="text-dark">
+										<i class="fa fa-phone-square fa-2x fa-color phone-link"></i>
+									</a>
+									<!-- <div class="phone-hover">
+										<p class="lead">Phone Number: 778206157</p>
+									</div> -->
+								</div>
+								<div class="p-3">
+									<a href="#contactModal" data-toggle="modal" class="text-dark">
+										<i class="fa fa-envelope-o fa-2x fa-color email-link"></i>
+									</a>
+									<!-- <div class="d-none email-hover">
+										<p class="lead">Email Address: waiyanlin2015015@gmail.com</p>
+									</div> -->
+								</div>
+								<div class="p-3">
+									<a class="text-dark" target="_blank" href="https://www.facebook.com/waiyanlinn.nn">
+										<i class="fa fa-facebook-square fa-2x fa-color"></i>
+									</a>
+								</div>
+								<div class="p-3">
+									<a class="text-dark" target="_blank" href="https://www.facebook.com/messages/t/waiyanlinn.nn">
+										<i class="fab fa-facebook-messenger fa-2x fa-color"></i>
+									</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				  </div>
+				  <div class="col-md-8">
+					  <div class="mb-5">
+						  <h3 class="text-secondary">Leave a message</h3>
+					  </div>
+					  <form autocomplete="off" [formGroup]="contactForm"  novalidate>
+						  <div class="input-group mb-4">
+							  <div class="input-group-append">
+								  <span class="input-group-text">
+									  <i class="fas fa-user"></i>
+								  </span>
+							  </div>
+							  <input type="text" formControlName="name"  class="form-control" placeholder="Name" [class.is-invalid]="name?.invalid && (name?.dirty|| name?.touched)">
+								<div id="error"*ngIf="name?.invalid && (name?.dirty||name?.touched)">
+									<small *ngIf="name.errors.required" class="text text-danger">Name is required!</small>
+								</div>
+						  </div>
+						  <div class="input-group mb-4">
+							<div class="input-group-append">
+								<span class="input-group-text">
+									<i class="fas fa-phone-alt"></i>
+								</span>
+							</div>
+							<input type="text" formControlName="phone"  class="form-control" placeholder="Phone"  [class.is-invalid]="phone?.invalid && (phone?.dirty|| phone?.touched)">
+								<div id="error" *ngIf="phone?.invalid && (phone?.dirty||phone?.touched)">
+									<small *ngIf="phone.errors.required" class="text text-danger">Number is required!</small>
+									<small *ngIf="phone.errors.minlength" class="text text-danger">At least 6 numbers</small>
+								</div>
+						</div>
+						<div class="input-group mb-4">
+							<div class="input-group-append">
+								<span class="input-group-text">
+									<i class="fas fa-map-marker-alt"></i>
+								</span>
+							</div>
+							<input type="text" formControlName="address"  class="form-control" placeholder="Address"  [class.is-invalid]="address?.invalid && (address?.dirty|| address?.touched)">
+								<div id="error" *ngIf="address?.invalid && (address?.dirty||address?.touched)">
+									<small *ngIf="address.errors.required" class="text text-danger">Address is required!</small>
+								</div>
+						</div>
+
+						<div class="input-group mb-4">
+							<div class="input-group-append">
+								<span class="input-group-text">
+									<i class="fas fa-pencil-alt"></i>
+								</span>
+							</div>
+							<textarea formControlName="message"  class="form-control" placeholder="Message"  rows="4" [class.is-invalid]="message?.invalid && (message?.dirty|| message?.touched)"></textarea>
+							<div id="error" *ngIf="message?.invalid && (message?.dirty||message?.touched)">
+								<small *ngIf="message.errors.required" class="text text-danger">Message is required!</small>
+							</div>
+						</div>
+						<button class="btn btn-secondary btn-block btn-lg" [disabled]="!contactForm.valid" (click)="create_info()" [routerLink]="['/thank-you']">Submit </button>
+					  </form>
+				  </div>
+			  </div>
+		  </div>
+	  </section>
+
+	  <footer id="main-footer" class="bg-dark text-center text-white">
+		<div class="container">
+		  <div class="row">
+			<div class="col py-4">
+			  <h3>Linn</h3>
+			  <p>Copyright &copy;2020<span id="year"></span></p>
+			</div>
+		  </div>
+		</div>
+	  </footer>
+
+	  <div class="modal fade text-dark" id="contactModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Contact Detail</h5>
+                    <button class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <div class="modal-body">
+					<p>Phone Number: <strong>778206157</strong></p>
+					<p>Email Address: <strong>waiyanlin2015015@gmail.com</strong></p>
+					<p>Messenger: <strong>Wai Yan Linn</strong></p>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
+
