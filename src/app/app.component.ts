@@ -9,7 +9,7 @@ import { FormGroup, FormBuilder } from '@angular/forms';
 })
 export class AppComponent {
 
-  title = 'my-lottery';
+  title = 'Linn';
   
   adminForm:FormGroup;
 
