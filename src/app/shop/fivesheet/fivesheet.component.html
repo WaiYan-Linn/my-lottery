@@ -1,123 +1,126 @@
-  <div class="container">
-    <div class="row">
-        <div class="col-6 col-lg-4 mb-3" *ngFor ="let item of fivesheet">
-            <div class="card border-dark mb-2 ">
-              <img class="img-fluid img-rounded-cricle mx-auto"  style="height: auto" src ="https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80" alt="Card image cap">
-                <div class="card-body text-center">
-                    
-
-                    <p class="card-text card-no-text">{{item.description1}}</p>
-                    <p class="card-text card-no-text">{{item.description2}}</p>
-                    <p class="card-text card-no-text">{{item.description3}}</p>
-                    <p class="card-text card-no-text">{{item.description4}}</p>
-                    <p class="card-text card-no-text">{{item.description5}}</p>
-
-
-                    
-                </div>
-                <div class="card-footer d-flex justify-content-end">
-                  <button class="btn btn-outline-secondary btn-lg" *ngIf="item.order==0" data-toggle="modal" data-target="#submit" (click)="choose_item(item)">Buy</button>
-                  <button class="btn btn-outline-secondary btn-lg" *ngIf="item.order==1"  data-toggle="modal" data-target="#fivesheet" (click)="choose_item(item)">Buy</button>
-                  <button class="btn btn-outline-secondary ml-1" *ngIf="item.order == 1"><i class="fas fa-heart">1</i></button>
-                </div>
+<div class="container">
+  <div class="row">
+      <div class="col-6 col-lg-4 mb-3" *ngFor ="let item of fivesheet">
+          <div class="card border-dark mb-2 ticket-card">
+            <div class="price-tag">
+              <p>6500Ks</p>
             </div>
-        </div>
-    </div>
-    </div>
+            <img class="img-fluid img-rounded-cricle mx-auto"  style="height: auto" src ="https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80" alt="Card image cap">
+              <div class="card-body text-center">
+                  
+
+                  <p class="card-text card-no-text">{{item.description1}}</p>
+                  <p class="card-text card-no-text">{{item.description2}}</p>
+                  <p class="card-text card-no-text">{{item.description3}}</p>
+                  <p class="card-text card-no-text">{{item.description4}}</p>
+                  <p class="card-text card-no-text">{{item.description5}}</p>
 
 
-    <footer id="main-footer" class="bg-dark text-center text-white">
-      <div class="container">
-        <div class="row">
-        <div class="col py-4">
-          <h3>Linn</h3>
-          <p>Copyright &copy;2020<span id="year"></span></p>
-        </div>
-        </div>
+                  
+              </div>
+              <div class="card-footer d-flex justify-content-end">
+                <button class="btn btn-outline-secondary btn-lg buy-btn" *ngIf="item.order==0" data-toggle="modal" data-target="#submit" (click)="choose_item(item)">Buy</button>
+                <button class="btn btn-outline-secondary btn-lg buy-btn" *ngIf="item.order==1"  data-toggle="modal" data-target="#fivesheet" (click)="choose_item(item)">Buy</button>
+                <button class="btn btn-outline-secondary ml-1" *ngIf="item.order == 1"><i class="fas fa-heart">1</i></button>
+              </div>
+          </div>
       </div>
-    </footer>
+  </div>
+  </div>
+
+
+  <footer id="main-footer" class="bg-dark text-center text-white">
+    <div class="container">
+      <div class="row">
+      <div class="col py-4">
+        <h3>Linn</h3>
+        <p>Copyright &copy;2020<span id="year"></span></p>
+      </div>
+      </div>
+    </div>
+  </footer>
 
 <!-- Modal -->
 <div class="modal fade" id="submit" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Your Information</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
+<div class="modal-dialog" role="document">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h5 class="modal-title" id="exampleModalLabel">Your Information</h5>
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
 
 
-        <form autocomplete="off" [formGroup]="customerForm"  novalidate>
-          <div class="input-group mb-4">
-            <div class="input-group-append">
-              <span class="input-group-text">
-                <i class="fas fa-user"></i>
-              </span>
-            </div>
-            <input type="text" formControlName="name"  class="form-control" placeholder="Name" [class.is-invalid]="name?.invalid && (name?.dirty|| name?.touched)">
-            <div id="error"*ngIf="name?.invalid && (name?.dirty||name?.touched)">
-              <small *ngIf="name.errors.required" class="text text-danger">Name is required!</small>
-            </div>
-          </div>
-          <div class="input-group mb-4">
-          <div class="input-group-append">
-            <span class="input-group-text">
-              <i class="fas fa-phone-alt"></i>
-            </span>
-          </div>
-          <input type="text" formControlName="phone"  class="form-control" placeholder="Phone"  [class.is-invalid]="phone?.invalid && (phone?.dirty|| phone?.touched)">
-            <div id="error" *ngIf="phone?.invalid && (phone?.dirty||phone?.touched)">
-              <small *ngIf="phone.errors.required" class="text text-danger">Number is required!</small>
-              <small *ngIf="phone.errors.minlength" class="text text-danger">At least 6 numbers</small>
-            </div>
-        </div>
+      <form autocomplete="off" [formGroup]="customerForm"  novalidate>
         <div class="input-group mb-4">
           <div class="input-group-append">
             <span class="input-group-text">
-              <i class="fas fa-map-marker-alt"></i>
+              <i class="fas fa-user"></i>
             </span>
           </div>
-          <input type="text" formControlName="address"  class="form-control" placeholder="Address"  [class.is-invalid]="address?.invalid && (address?.dirty|| address?.touched)">
-            <div id="error" *ngIf="address?.invalid && (address?.dirty||address?.touched)">
-              <small *ngIf="address.errors.required" class="text text-danger">Address is required!</small>
-            </div>
+          <input type="text" formControlName="name"  class="form-control" placeholder="Name" [class.is-invalid]="name?.invalid && (name?.dirty|| name?.touched)">
+          <div id="error"*ngIf="name?.invalid && (name?.dirty||name?.touched)">
+            <small *ngIf="name.errors.required" class="text text-danger">Name is required!</small>
+          </div>
         </div>
+        <div class="input-group mb-4">
+        <div class="input-group-append">
+          <span class="input-group-text">
+            <i class="fas fa-phone-alt"></i>
+          </span>
+        </div>
+        <input type="text" formControlName="phone"  class="form-control" placeholder="Phone"  [class.is-invalid]="phone?.invalid && (phone?.dirty|| phone?.touched)">
+          <div id="error" *ngIf="phone?.invalid && (phone?.dirty||phone?.touched)">
+            <small *ngIf="phone.errors.required" class="text text-danger">Number is required!</small>
+            <small *ngIf="phone.errors.minlength" class="text text-danger">At least 6 numbers</small>
+          </div>
+      </div>
+      <div class="input-group mb-4">
+        <div class="input-group-append">
+          <span class="input-group-text">
+            <i class="fas fa-map-marker-alt"></i>
+          </span>
+        </div>
+        <input type="text" formControlName="address"  class="form-control" placeholder="Address"  [class.is-invalid]="address?.invalid && (address?.dirty|| address?.touched)">
+          <div id="error" *ngIf="address?.invalid && (address?.dirty||address?.touched)">
+            <small *ngIf="address.errors.required" class="text text-danger">Address is required!</small>
+          </div>
+      </div>
 
-       
-       
-        </form>
+     
+     
+      </form>
+    
+    </div>
+    <div class="modal-footer">
       
-      </div>
-      <div class="modal-footer">
-        
-        <button class="btn btn-secondary btn-block btn-lg" [disabled]="!customerForm.valid" data-dismiss="modal" (click)="change_order(item)" (click)="buy(item)" [routerLink]="['/thank-you']">Submit</button>
-      
-      </div>
+      <button class="btn btn-secondary btn-block btn-lg" [disabled]="!customerForm.valid" data-dismiss="modal" (click)="change_order(item)" (click)="buy(item)" [routerLink]="['/thank-you']">Submit</button>
+    
     </div>
   </div>
 </div>
- 
+</div>
+
 <!-- Modal -->
 <div class="modal fade" id="fivesheet" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Information</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-       <p> This has been ordered by another customer.</p>
-       <p> Anyway, you can order this.</p>
-       <p> We will manage and contact about this later.</p>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal" data-toggle="modal" data-target="#submit" (click)="change_order(item)">Ok</button>
-      </div>
+<div class="modal-dialog" role="document">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h5 class="modal-title" id="exampleModalLabel">Information</h5>
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+     <p> This has been ordered by another customer.</p>
+     <p> Anyway, you can order this.</p>
+     <p> We will manage and contact about this later.</p>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-secondary" data-dismiss="modal" data-toggle="modal" data-target="#submit" (click)="change_order(item)">Ok</button>
     </div>
   </div>
+</div>
 </div>

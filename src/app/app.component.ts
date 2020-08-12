@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder } from '@angular/forms';
-
+import { FormBuilder, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
@@ -9,7 +8,7 @@ import { FormGroup, FormBuilder } from '@angular/forms';
 })
 export class AppComponent {
 
-  title = 'Linn';
+  title = "Linn";
   
   adminForm:FormGroup;
 
