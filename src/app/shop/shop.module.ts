@@ -4,7 +4,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AdminRoutingModule } from '../admin/admin-routing-module';
-import { BackgroundComponent } from './background/background.component';
+import { CarouselComponent } from './carousel/carousel.component';
 import { FivesheetComponent } from './fivesheet/fivesheet.component';
 import { ShopRoutingModule } from './shop-routing-module';
 import { ThreesheetComponent } from './threesheet/threesheet.component';
@@ -13,7 +13,7 @@ import { ThreesheetComponent } from './threesheet/threesheet.component';
     declarations: [
        FivesheetComponent,
        ThreesheetComponent,
-       BackgroundComponent,
+       CarouselComponent,
     ],
     imports: [
       CommonModule,

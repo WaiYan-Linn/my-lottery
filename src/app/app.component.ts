@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 
+declare let $: any
+
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -23,5 +26,11 @@ export class AppComponent {
 
   ngOnInit(): void {
   } 
+
+  click(){
+        $('.navbar-collapse a').click(function(){
+            $(".navbar-collapse").collapse('hide');
+        });
+  }
 
 }

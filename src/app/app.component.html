@@ -1,30 +1,40 @@
+<html>
+<body class="d-flex flex-column" style="min-height: 100vh;">
+
+
+
+
 <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
     <div class="container">
       <a href="../../index.html" class="navbar-brand">
-        <img src="https://scontent.frgn7-2.fna.fbcdn.net/v/t1.15752-9/116151480_726936781424340_9103485516870203073_n.png?_nc_cat=106&_nc_sid=b96e70&_nc_eui2=AeElfk9BWENfU-ApT08YZNDCBTJ9nU3O9iQFMn2dTc72JLkeH0zx5xdOLBe2JLiKZq3JQCoN-hpa3yyQa9NbFc7a&_nc_ohc=-KbC9Z-EYL4AX9Eriez&_nc_ht=scontent.frgn7-2.fna&oh=1e8c7970421151d8e8558fa24f2d15fd&oe=5F7745CB" 
+        <img src="../assets/images/lottery-website-logo.png"
         alt="lotto logo" class="img-fluid img-logo-size align-self-center"> Linn
       </a>
       <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarCollapse">
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item p-2 " [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
-            <a href="../../index.html" class="nav-link" routerLink="" >Home</a>
+        <ul class="nav navbar-nav ml-auto">
+          <li class="nav-item p-2 "  >
+            <a  class="nav-link" [routerLink]="['/welcome']" (click)="click()" [routerLinkActive]="['active']"
+            [routerLinkActiveOptions]="{ exact: true }">Home</a>
           </li>
-          <li class="nav-item p-2" [routerLinkActive]="['active']">
-            <a [routerLink]="['/services']" class="nav-link" >Shop</a>
+          <li class="nav-item p-2" >
+            <a [routerLink]="['/shop']" class="nav-link" (click)="click()" [routerLinkActive]="['active']">Shop</a>
           </li>
-          <li class="nav-item p-2" [routerLinkActive]="['active']">
-            <a [routerLink]="['/contact']" class="nav-link">Contact Us</a>
+          <li class="nav-item p-2" >
+            <a [routerLink]="['/contact']" class="nav-link" (click)="click()" [routerLinkActive]="['active']">Contact Us</a>
           </li>
-          <li class="nav-item p-2" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
-            <a  class="nav-link" role="button" data-toggle="modal" data-target="#exampleModal" routerLink="">Admin</a>
+          <li class="nav-item p-2" >
+            <a  class="nav-link" role="button" data-toggle="modal" data-target="#exampleModal"  routerLink="" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{ exact: true }">Admin</a>
           </li>
         </ul>
       </div>
     </div>
   </nav>
+
+
+
 
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -58,5 +68,23 @@
   
     
 
+<section class=" flex-grow-1">
 
 <router-outlet></router-outlet> 
+
+</section>
+
+<!-- Footer And Copyright -->
+<footer id="main-footer" class="bg-dark text-center text-white">
+  <div class="container">
+    <div class="row">
+      <div class="col py-4">
+        <h3>Linn</h3>
+        <p>Copyright &copy;2020<span id="year"></span></p>
+        <a [routerLink]="['/contact']" class="btn btn-outline-primary text-white">Contact Us</a>
+      </div>
+    </div>
+  </div>
+</footer>
+  
+</body>
