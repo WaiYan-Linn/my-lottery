@@ -16,14 +16,14 @@
       <div class="collapse navbar-collapse" id="navbarCollapse">
         <ul class="nav navbar-nav ml-auto">
           <li class="nav-item p-2 "  >
-            <a  class="nav-link" [routerLink]="['/welcome']" (click)="click()" [routerLinkActive]="['active']"
+            <a  class="nav-link" [routerLink]="['/welcome']"  [routerLinkActive]="['active']"
             [routerLinkActiveOptions]="{ exact: true }">Home</a>
           </li>
           <li class="nav-item p-2" >
-            <a [routerLink]="['/shop']" class="nav-link" (click)="click()" [routerLinkActive]="['active']">Shop</a>
+            <a [routerLink]="['/shop']" class="nav-link" [routerLinkActive]="['active']">Shop</a>
           </li>
           <li class="nav-item p-2" >
-            <a [routerLink]="['/contact']" class="nav-link" (click)="click()" [routerLinkActive]="['active']">Contact Us</a>
+            <a [routerLink]="['/contact']" class="nav-link"  [routerLinkActive]="['active']">Contact Us</a>
           </li>
           <li class="nav-item p-2" >
             <a  class="nav-link" role="button" data-toggle="modal" data-target="#exampleModal"  routerLink="" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{ exact: true }">Admin</a>

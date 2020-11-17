@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 
 declare let $: any
@@ -9,7 +9,7 @@ declare let $: any
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent implements AfterViewInit {
 
   title = "Linn";
   
@@ -22,15 +22,16 @@ export class AppComponent {
       }
     )
    }
+  ngAfterViewInit(): void {
+    $('.navbar-collapse a').click(function(){
+      $(".navbar-collapse").collapse('hide');
+  });
+  }
 
 
   ngOnInit(): void {
   } 
 
-  click(){
-        $('.navbar-collapse a').click(function(){
-            $(".navbar-collapse").collapse('hide');
-        });
-  }
+ 
 
 }
