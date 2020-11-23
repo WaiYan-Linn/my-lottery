@@ -23,9 +23,38 @@ export class AppComponent implements AfterViewInit {
     )
    }
   ngAfterViewInit(): void {
+
+    $(document).mouseleave(function(){
+      $(".navbar-collapse").collapse('hide');
+  });
+
+  $(document).scroll(function(){
+    $(".navbar-collapse").collapse('hide');
+  });
+
+  
+  $(document).click(function(){
+    $(".navbar-collapse").collapse('hide');
+});
+
+
+  $("#navbarCollapse").blur(function(){
+    $(".navbar-collapse").collapse('hide');
+});
+
+    $("#navbarCollapse").mouseleave(function(){
+      $(".navbar-collapse").collapse('hide');
+    });
+
+    
+
+    
+ 
+
     $('.navbar-collapse a').click(function(){
       $(".navbar-collapse").collapse('hide');
   });
+
   }
 
 
